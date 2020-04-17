@@ -12,13 +12,12 @@ import { ToggleShow, ToggleHide, ChangeColor } from './store/spinner.actions';
       [color]="loader.color">
     </app-loading>
 
-    <p>{{color|async}}</p>
-    <input [(ngModel)]="inputColor">
-
+    <p>Component: {{(loading|async).color}}</p>
+    <input [(ngModel)]="inputColor" (change)=Change()>
+    <p>Input: {{inputColor}}</p>
   <div>
     <button (click)="Show()">Show</button>
     <button (click)="Hide()">Hide</button>
-    <button (click)="Change()">Change</button>
   </div>
   `
 })
